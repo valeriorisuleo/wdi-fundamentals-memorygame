@@ -1,0 +1,52 @@
+h1{
+	color: rgb(1,132,130);
+}
+h2{
+	color: #ffd700;
+}
+main{
+	text-align: center;
+}
+nav{
+	background-color: #808080;
+}
+a{
+	background-color: #ffbf00;
+	color: white;
+	padding: 35px;
+	display: block;
+	float: left;
+}
+a:hover{
+	background-color: #ee5f3c;
+}
+.card{
+	height: 200px;
+	width: 150px;
+	background: yellow;
+	border:1px solid black;
+	border-radius: 10px;
+	margin-bottom: 1px;
+	float: left;
+	margin: 8%;
+}
+.name{
+	color: #ff0000;
+}
+.board{
+	display: inline-block;
+	width: 50%;
+	height: 50%;
+}
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+footer{
+	background-color: #808080;
+	text-align: center;
+}
