@@ -3,11 +3,10 @@ var cardOne = "queen";
 var cardTwo = "queen";
 var cardThree = "King";
 var cardFour = "King";
-var areBothEven = function(cardTwo, cardFour) {
-	if (cardTwo % 2 === 0 && cardFour === 0) {
-		alert("you find a match");
-	}
-	else{
-		alert("Sorry");
+var compare = function(cardTwo, cardFour) {
+	if (cardTwo === cardFour) {
+		alert("We got a match!")
+	} else {
+		alert("We are sorry!")
 	}
 };
