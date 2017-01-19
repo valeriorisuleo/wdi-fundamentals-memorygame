@@ -1,46 +1,60 @@
-var cardOne = "queen";
-var cardTwo = "queen";
-var cardThree = "King";
-var cardFour = "King";
+var cards = ['queen', 'queen', 'king', 'king'];
+var cardsInPlay = [];
 
-/*var compare = function(cardTwo, cardFour) {
-	if (cardOne === cardTwo) {
-		alert("We got a match!")
-	} else {
-		alert("We are sorry!")
-	}
-};*/
 
-/*
-1) Open your index.html and look for your <div> with a class of board. 
-We need to give this div an ID so that we may get it using JavaScript.
 
-2) Give your div an id of game-board.*/
-document.getElementsByTagName('div')[0].setAttribute('id', 'game-board');
+var board = document.getElementById('game-board');
 
-/*
-5) Get an element with the ID of game-board and set it to a variable.
-*/
-var gameboard = document.getElementById('game-board');
-
-/*
-6) Assuming your memory card game consists of four cards, CREATE a 
-for LOOP that creates an HTML element for each card. 
-Each HTML element should be a DIV, as well as the CLASS card 
-(This will help when you add css).
-*/
-
-//Questa è la sintassi di un LOOP per creare un qualsiasi elemento (div,li...):
 
 function createCards() {
-	for(var i=0; i<4; i++) {
+	for(var i=0; i<cards.length; i++) {
 		//create element
 		var newCard = document.createElement('div');
 		//assign class
 		newCard.className = 'card';
-		//attach it to the document
+		//attach it to the board
 		document.getElementsByTagName('div')[0].appendChild(newCard);
+
+		newCard.setAttribute('data-card', cards[i]);
+		
+		// when a card is clicked the function isTwoCards will be executed
+		newCard.addEventListener('click', isTwoCards);
 	}
 };
 
+function isMatch(cards) {
+	// body...
+	if (card[0]==card[1]) {
+		alert("We got a match!")
+	} else {
+		alert("We are sorry!")
+	}
+}
+
+function isTwoCards(cards) {
+	// body...
+	cardsInPlay.push(this.getAttribute('data-card'));
+	// show the card's image
+	console.log(this.getAttribute('data-card'));
+	if (this.getAttribute('data-card') === 'king') {
+		this.innerHTML = "<img src='http://i.imgur.com/bnuv5Im.png'>"; // king
+	} else {
+		this.innerHTML = "<img src='http://i.imgur.com/v6buNt2.png'>"; //queen
+	}
+	if (cardsInPlay.length == 2) {
+
+		// if you have two cards in play check for a match
+		isMatch(cardsInPlay);
+
+		// clear cards in play array for next try
+    	cardsInPlay = [];
+	}
+}
+
+
 createCards();
+
+
+
+
+
